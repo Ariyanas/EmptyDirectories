@@ -70,6 +70,11 @@ public class EmptyDirHome extends javax.swing.JFrame {
 
         btnBrowse.setText("...");
         btnBrowse.setToolTipText("Browse and select folder");
+        btnBrowse.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBrowseActionPerformed(evt);
+            }
+        });
 
         btnSearch.setText("Search");
         btnSearch.setToolTipText("Search for empty directories in the root folder");
@@ -224,6 +229,11 @@ public class EmptyDirHome extends javax.swing.JFrame {
             btnDelete.setEnabled(true);
         }
     }//GEN-LAST:event_btnResultActionPerformed
+
+    private void btnBrowseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBrowseActionPerformed
+        // TODO add your handling code here:
+        System.out.println("Hello");
+    }//GEN-LAST:event_btnBrowseActionPerformed
 
     /**
      * @param args the command line arguments
