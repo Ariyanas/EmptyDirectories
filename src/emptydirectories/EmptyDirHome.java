@@ -225,7 +225,7 @@ public class EmptyDirHome extends javax.swing.JFrame {
                 txtAreaOutput.setText(txtAreaOutput.getText()+"\n"+i+"  :  "+file.getAbsolutePath()+"\n");
                 i++;
             }
-            
+            i--;
             txtStatus.setText(i+"  Empty directories found !!");
             btnDelete.setEnabled(true);
         }
