@@ -8,6 +8,7 @@ package emptydirectories;
 import java.awt.Color;
 import java.io.File;
 import java.util.ArrayList;
+import javax.swing.JFileChooser;
 
 /**
  *
@@ -232,7 +233,13 @@ public class EmptyDirHome extends javax.swing.JFrame {
 
     private void btnBrowseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBrowseActionPerformed
         // TODO add your handling code here:
-        System.out.println("Hello");
+        JFileChooser jf = new JFileChooser();
+        jf.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+        jf.setAcceptAllFileFilterUsed(false);
+        
+        if(jf.showOpenDialog(this) == JFileChooser.APPROVE_OPTION){
+            txtBoxDir.setText(jf.getSelectedFile().getAbsolutePath());
+        }
     }//GEN-LAST:event_btnBrowseActionPerformed
 
     /**
