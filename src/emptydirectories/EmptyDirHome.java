@@ -7,8 +7,10 @@ package emptydirectories;
 
 import java.awt.Color;
 import java.io.File;
+import java.math.BigInteger;
 import java.util.ArrayList;
 import javax.swing.JFileChooser;
+import org.apache.commons.io.FileUtils;
 
 /**
  *
@@ -334,7 +336,16 @@ public class EmptyDirHome extends javax.swing.JFrame {
         txtAreaOutput.setText(txtAreaOutput.getText()+"\nSearching in Directory :  "+root.getAbsolutePath());
         
         try{
-            if(root.list().length == 0){
+            //if(root.list().length == 0){
+            
+            BigInteger size = FileUtils.sizeOfDirectoryAsBigInteger(root);
+            
+            
+            BigInteger zero = BigInteger.valueOf(0);
+            //txtAreaOutput.setText(txtAreaOutput.getText()+"\n\nEmpty directory :  "+size+"\n");
+            
+            
+            if(size == zero){
                 empty.add(root);
                 txtAreaOutput.setText(txtAreaOutput.getText()+"\n\nEmpty directory :  "+root.getAbsolutePath()+"\n");
                 flag = false;
